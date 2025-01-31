@@ -9,3 +9,4 @@
 [2025-01-30 23:23:54]	1.0.15	Automatic update
 [2025-01-31 01:52:32]	1.0.16	Package OK
 [2025-01-31 03:21:36]	1.0.17	Automatic update
+[2025-01-31 03:23:01]	1.0.18	Automatic update
