@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Boctulus\ApiClient\ApiClientFallback as ApiClientFallbackAlias;
+use Boctulus\ApiClient\Helpers\VarDump;
 
 class TestFallback extends Controller
 {
@@ -17,11 +18,11 @@ class TestFallback extends Controller
 
         $res = $client->getResponse();
 
-        var_dump($client->status());
-        var_dump($client->error());
-
-        var_dump($client
+        VarDump::dd($client->status(), 'STATUS');
+        VarDump::dd($client->error(), 'ERROR');
+        
+        VarDump::dd($client
         ->decode()
-        ->data());
+        ->data(), 'DATA');
     }
 }
