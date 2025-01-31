@@ -1,8 +1,9 @@
 {
     "info": {
-        "_PostmanGenerator_id": "8be6a940-42c9-d807-5718-b5346f781d02",
+        "_postman_id": "532dcf91-f065-6b0d-ce08-64ef98c31b20",
         "name": "LaravelShopify",
-        "schema": "https://schema.getPostmanGenerator.com/json/collection/v2.1.0/collection.json",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": "Collection for LaravelShopify API endpoints",
         "_exporter_id": "2650147"
     },
     "item": [
@@ -11,9 +12,12 @@
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get users",
                 "url": {
                     "raw": "/api/users",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "users"
@@ -21,24 +25,24 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         },
         {
             "name": "carts",
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get carts",
                 "url": {
                     "raw": "/api/carts",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "carts"
@@ -46,24 +50,24 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         },
         {
             "name": "cart_items",
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get cart_items",
                 "url": {
                     "raw": "/api/cart_items",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "cart_items"
@@ -71,24 +75,24 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         },
         {
             "name": "products",
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get products",
                 "url": {
                     "raw": "/api/products",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "products"
@@ -96,24 +100,24 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         },
         {
             "name": "addresses",
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get addresses",
                 "url": {
                     "raw": "/api/addresses",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "addresses"
@@ -121,24 +125,24 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         },
         {
             "name": "orders",
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get orders",
                 "url": {
                     "raw": "/api/orders",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "orders"
@@ -146,24 +150,24 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         },
         {
             "name": "order_items",
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get order_items",
                 "url": {
                     "raw": "/api/order_items",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "order_items"
@@ -171,24 +175,24 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         },
         {
             "name": "favorites",
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get favorites",
                 "url": {
                     "raw": "/api/favorites",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "favorites"
@@ -196,24 +200,24 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         },
         {
             "name": "price_rules",
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get price_rules",
                 "url": {
                     "raw": "/api/price_rules",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "price_rules"
@@ -221,24 +225,24 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         },
         {
             "name": "inventory",
             "request": {
                 "method": "GET",
                 "header": [],
+                "description": "Get inventory",
                 "url": {
                     "raw": "/api/inventory",
-                    "host": "{{base_url}}",
+                    "host": [
+                        "{{base_url}}"
+                    ],
                     "path": [
                         "api",
                         "inventory"
@@ -246,15 +250,12 @@
                 },
                 "auth": {
                     "type": "bearer",
-                    "bearer": [
-                        {
-                            "key": "token",
-                            "value": "{{token}}",
-                            "type": "string"
-                        }
-                    ]
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
                 }
-            }
+            },
+            "response": []
         }
     ]
 }

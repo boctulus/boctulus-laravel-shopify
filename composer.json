@@ -5,7 +5,7 @@
     "description": "API Restful",
     "keywords": ["shopify", "laravel"],
     "license": "MIT",
-    "version": "1.0.21",
+    "version": "1.0.22",
     "require": {
         "php": "^8.2",
         "boctulus/api-client": "@dev",
