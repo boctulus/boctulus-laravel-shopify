@@ -1,0 +1,260 @@
+{
+    "info": {
+        "_PostmanGenerator_id": "8be6a940-42c9-d807-5718-b5346f781d02",
+        "name": "LaravelShopify",
+        "schema": "https://schema.getPostmanGenerator.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "2650147"
+    },
+    "item": [
+        {
+            "name": "users",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/users",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "users"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "carts",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/carts",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "carts"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "cart_items",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/cart_items",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "cart_items"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "products",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/products",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "products"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "addresses",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/addresses",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "addresses"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "orders",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/orders",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "orders"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "order_items",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/order_items",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "order_items"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "favorites",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/favorites",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "favorites"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "price_rules",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/price_rules",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "price_rules"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "inventory",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/api/inventory",
+                    "host": "{{base_url}}",
+                    "path": [
+                        "api",
+                        "inventory"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "{{token}}",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

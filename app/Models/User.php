@@ -1,41 +1,104 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
-use Spatie\Permission\Traits\HasRoles;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable implements JWTSubject
+/**
+ * Class User
+ * 
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property Carbon|null $email_verified_at
+ * @property string $password
+ * @property string|null $remember_token
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property bool $shopify_grandfathered
+ * @property string|null $shopify_namespace
+ * @property bool $shopify_freemium
+ * @property int|null $plan_id
+ * @property string|null $deleted_at
+ * @property Carbon|null $password_updated_at
+ * @property int|null $theme_support_level
+ * 
+ * @property Plan|null $plan
+ * @property Collection|Address[] $addresses
+ * @property Collection|Cart[] $carts
+ * @property Collection|Charge[] $charges
+ * @property Collection|Favorite[] $favorites
+ * @property Collection|Order[] $orders
+ *
+ * @package App\Models
+ */
+class User extends Model
 {
-    use Notifiable, HasRoles;
+	use SoftDeletes;
+	protected $table = 'users';
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+	protected $casts = [
+		'email_verified_at' => 'datetime',
+		'shopify_grandfathered' => 'bool',
+		'shopify_freemium' => 'bool',
+		'plan_id' => 'int',
+		'password_updated_at' => 'datetime',
+		'theme_support_level' => 'int'
+	];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+	protected $hidden = [
+		'password',
+		'remember_token'
+	];
 
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+	protected $fillable = [
+		'name',
+		'email',
+		'email_verified_at',
+		'password',
+		'remember_token',
+		'shopify_grandfathered',
+		'shopify_namespace',
+		'shopify_freemium',
+		'plan_id',
+		'password_updated_at',
+		'theme_support_level'
+	];
 
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
+	public function plan()
+	{
+		return $this->belongsTo(Plan::class);
+	}
 
-    public function getJWTCustomClaims()
-    {
-        return [];
-    }
+	public function addresses()
+	{
+		return $this->hasMany(Address::class);
+	}
+
+	public function carts()
+	{
+		return $this->hasMany(Cart::class);
+	}
+
+	public function charges()
+	{
+		return $this->hasMany(Charge::class);
+	}
+
+	public function favorites()
+	{
+		return $this->hasMany(Favorite::class);
+	}
+
+	public function orders()
+	{
+		return $this->hasMany(Order::class);
+	}
 }
