@@ -2,6 +2,7 @@
 
 namespace Boctulus\ApiClient;
 
+use Boctulus\ApiClient\Helpers\XML;
 use Boctulus\ApiClient\Helpers\Url;
 use Boctulus\ApiClient\Helpers\Utils;
 use Boctulus\ApiClient\Helpers\Logger;
@@ -32,7 +33,7 @@ class ApiClientFallback
     protected $error;
     protected $content_type;
     protected $effective_url;
-    protected $auto_decode = true;
+    protected $auto_decode = false;
     
     // Cache
     protected $expiration;
@@ -44,8 +45,9 @@ class ApiClientFallback
     protected $curl;
 
     function __construct($url = null)
-    {
+    {        
         $this->useCurl = function_exists('curl_init');
+        // $this->useCurl = false;
         
         if ($url !== null) {
             $this->setUrl($url);
@@ -53,6 +55,8 @@ class ApiClientFallback
 
         if ($this->useCurl) {
             $this->curl = curl_init();
+        } else {
+            require_once __DIR__ . '/Constants/Curl.php';
         }
     }
 
@@ -157,10 +161,15 @@ class ApiClientFallback
     protected function parseCurlOutput($output, $exitCode)
     {
         $raw = implode("\n", $output);
-        $parts = explode("\r\n\r\n", $raw, 2);
+        
+        // Detectar tipo de retorno de carro usado
+        $crlf = Strings::carriageReturn($raw);
+        $separator = $crlf . $crlf; // Separador de headers/body
+        
+        $parts = explode($separator, $raw, 2);
         
         // Parse headers
-        $headers = isset($parts[0]) ? explode("\n", $parts[0]) : [];
+        $headers = isset($parts[0]) ? explode($crlf, $parts[0]) : [];
         foreach ($headers as $header) {
             $this->parseHeader($header);
         }
