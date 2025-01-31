@@ -16,6 +16,10 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('shopify_product_id')->unique();
+            
+            // Agregar campos "base" necesarios (ej: precio regular)
+            // $table->decimal('base_price', 10, 2); // Precio     normal sin descuentos
+
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class CreateCartItemsTable extends Migration
         Schema::create('cart_items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('cart_id')->constrained()->onDelete('cascade');
-            $table->bigInteger('shopify_product_id');
+            $table->bigInteger('shopify_product_id')->constrained()->onDelete('cascade'); // Elimina ítem si producto desaparece
             $table->integer('quantity');
             $table->decimal('price', 10, 2);
             $table->timestamps();
