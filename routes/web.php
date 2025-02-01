@@ -1,18 +1,20 @@
 <?php
 
-use App\Http\Controllers\AdminTasks;
-use App\Http\Controllers\ShopiTestController;
-use App\Http\Controllers\TestFallback;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
-
-
-Route::get('/test-fallback', [TestFallback::class, 'test_apiclientfallback_package']);
-
-Route::get('/shopify/test-products', [ShopiTestController::class, 'apirest_products']);
-
-Route::get('/admin/list', [AdminTasks::class, 'list']);
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

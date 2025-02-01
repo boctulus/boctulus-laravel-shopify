@@ -216,20 +216,25 @@ php artisan make:migration create_inventory_table
 
 ---
 
-### **Próximos Pasos**
+# Autenticacion JWT
 
-1. **Implementar la sincronización con Shopify**:
-   - Crear un servicio para obtener y actualizar productos desde Shopify.
-   - Configurar webhooks para mantener sincronizados los inventarios.
+Generar la secret key ejecutando:
 
-2. **Implementar la lógica de descuentos**:
-   - Crear un servicio para aplicar reglas de precios en el carrito.
+```bash 
+php artisan jwt:secret
+```
 
-3. **Configurar Redis para caché**:
-   - Cachear respuestas de la API de Shopify para mejorar el rendimiento.
+# Roles y permisos
 
-4. **Implementar roles y permisos**:
-   - Usar `spatie/laravel-permission` para controlar el acceso a los endpoints.
+Sanctum maneja la autenticación (tokens)
 
-5. **Pruebas y Validación**:
-   - Realizar pruebas exhaustivas para garantizar la correcta sincronización con Shopify y la lógica de negocio.
+[Sanctum](https://github.com/laravel/sanctum)
+
+Para los roles se utiliza utiliza la librería [Laravel Permission](https://github.com/spatie/laravel-permission)
+
+---
+
+
+
+
+

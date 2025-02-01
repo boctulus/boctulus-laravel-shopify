@@ -8,8 +8,14 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
+
 
 /**
  * Class User
@@ -32,16 +38,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * 
  * @property Plan|null $plan
  * @property Collection|Address[] $addresses
- * @property Collection|Cart[] $carts
- * @property Collection|Charge[] $charges
+ * @property Collection|Cart[] $carts 
  * @property Collection|Favorite[] $favorites
  * @property Collection|Order[] $orders
  *
  * @package App\Models
  */
-class User extends Model
+class User extends Authenticatable
 {
-	use SoftDeletes;
+	use HasApiTokens, HasRoles, SoftDeletes, Notifiable, HasFactory;
 	protected $table = 'users';
 
 	protected $casts = [
@@ -85,11 +90,6 @@ class User extends Model
 	public function carts()
 	{
 		return $this->hasMany(Cart::class);
-	}
-
-	public function charges()
-	{
-		return $this->hasMany(Charge::class);
 	}
 
 	public function favorites()

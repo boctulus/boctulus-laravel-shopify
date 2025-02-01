@@ -5,12 +5,11 @@
     "description": "API Restful",
     "keywords": ["shopify", "laravel"],
     "license": "MIT",
-    "version": "1.0.23",
+    "version": "1.0.24",
     "require": {
         "php": "^8.2",
         "boctulus/api-client": "@dev",
         "guzzlehttp/guzzle": "^7.9",
-        "kyon147/laravel-shopify": "^22.0",
         "laravel/framework": "^11.31",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
@@ -20,6 +19,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "laravel/breeze": "^2.3",
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",

@@ -2,19 +2,57 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\PriceRuleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartItemController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\AddressController;
+use App\Http\Middleware\Authenticate;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+// Rutas públicas de autenticación
+Route::post('login', [AuthController::class, 'login']);
+Route::post('register', [AuthController::class, 'register']);
 
+// Rutas protegidas
+Route::middleware([
+    Authenticate::class,
+    \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+])->group(function () {
+    // Ruta de usuario autenticado
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
 
-Route::resource('addresses', App\Http\Controllers\AddressController::class);
-Route::resource('cart_items', App\Http\Controllers\CartItemController::class);
-Route::resource('carts', App\Http\Controllers\CartController::class);
-Route::resource('favorites', App\Http\Controllers\FavoriteController::class);
-Route::resource('inventory', App\Http\Controllers\InventoryController::class);
-Route::resource('order_items', App\Http\Controllers\OrderItemController::class);
-Route::resource('orders', App\Http\Controllers\OrderController::class);
-Route::resource('price_rules', App\Http\Controllers\PriceRuleController::class);
-Route::resource('products', App\Http\Controllers\ProductController::class);
+    // Rutas solo para admin
+    Route::middleware('role:admin')->group(function () {
+        Route::apiResources([
+            'products' => ProductController::class,
+            'inventory' => InventoryController::class,
+            'price_rules' => PriceRuleController::class,
+            'users' => UserController::class,
+        ]);
+    });
 
+    // Rutas para customers 
+    Route::middleware('role:customer')->group(function () {
+        // Rutas de solo lectura para productos
+        Route::get('products', [ProductController::class, 'index']);
+        Route::get('products/{id}', [ProductController::class, 'show']);
+        
+        // Rutas para operaciones propias del cliente
+        Route::apiResources([
+            'cart_items' => CartItemController::class,
+            'carts' => CartController::class,
+            'favorites' => FavoriteController::class,
+            'orders' => OrderController::class,
+            'order_items' => OrderItemController::class,
+            'addresses' => AddressController::class,
+        ]);
+    });
+});
