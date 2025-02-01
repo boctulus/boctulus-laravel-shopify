@@ -21,7 +21,7 @@ Route::post('register', [AuthController::class, 'register']);
 
 // Rutas protegidas
 Route::middleware([
-    Authenticate::class,
+    'auth:sanctum',
     \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
 ])->group(function () {
     // Ruta de usuario autenticado
@@ -32,8 +32,7 @@ Route::middleware([
     // Rutas solo para admin
     Route::middleware('role:admin')->group(function () {
         Route::apiResources([
-            'products' => ProductController::class,
-            'inventory' => InventoryController::class,
+            'products' => ProductController::class,            
             'price_rules' => PriceRuleController::class,
             'users' => UserController::class,
         ]);
@@ -53,6 +52,7 @@ Route::middleware([
             'orders' => OrderController::class,
             'order_items' => OrderItemController::class,
             'addresses' => AddressController::class,
+            'inventory' => InventoryController::class
         ]);
     });
 });
