@@ -1,8 +1,6 @@
 {
     "info": {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "_postman_id": "e03619ad-cb39-f193-59a1-785ef94316bc",
+        "_postman_id": "ed9a2483-4a35-f936-65c9-a296f8e3d14c",
         "name": "LaravelShopify",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "description": "Collection for LaravelShopify API endpoints",
@@ -1047,54 +1045,6 @@
                                 "api",
                                 "inventory"
                             ]
-                        },
-                        "auth": {
-                            "type": "bearer",
-                            "bearer": {
-                                "token": "{{token}}"
-                            }
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        },
-        {
-            "name": "register",
-            "item": [
-                {
-                    "name": "POST register",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json"
-                            }
-                        ],
-                        "description": "Post register",
-                        "url": {
-                            "raw": "/api/register",
-                            "host": [
-                                "{{base_url}}"
-                            ],
-                            "path": [
-                                "api",
-                                "register"
-                            ]
-                        },
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"name\": \"John Doe 2\",\n    \"email\": \"john@example2.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}",
-                            "options": {
-                                "raw": {
-                                    "language": "json"
-                                }
-                            }
                         },
                         "auth": {
                             "type": "bearer",
