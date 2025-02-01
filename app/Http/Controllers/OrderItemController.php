@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\OrderItem;
 use App\Http\Resources\OrderItemResource;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class OrderItemController extends Controller
 {
@@ -13,37 +14,83 @@ class OrderItemController extends Controller
    protected $model = OrderItem::class;
    protected $resource = OrderItemResource::class;
 
-   // __VALIDATION_RULES__
+   protected $store_rules = [
+		'order_id' => 'integer|required',
+		'shopify_product_id' => 'integer|required',
+		'quantity' => 'integer|required',
+		'price' => 'required',
+	];
 
-   public function index()
-   {
-       return $this->resource::collection($this->model::paginate());
-   }
+	protected $update_rules = [
+		'order_id' => 'integer',
+		'shopify_product_id' => 'integer',
+		'quantity' => 'integer',
+		'price' => '',
+	];
 
-   public function store(Request $request) 
-   {
-       $validated = $request->validate($this->store_rules);
-       $model = $this->model::create($validated);
-       return new $this->resource($model);
-   }
+
+    public function index()
+    {
+        return $this->resource::collection($this->model::paginate())
+            ->response()
+            ->header('Content-Type', 'application/json');
+    }
+
+    public function store(Request $request) 
+    {
+        try {
+            $validated = $request->validate($this->store_rules);
+            $model = $this->model::create($validated);
+            return (new $this->resource($model))
+                ->response()
+                ->header('Content-Type', 'application/json');
+        } catch (ValidationException $e) {
+            return response()->json([
+                'message' => 'Validation Error',
+                'errors' => $e->errors()
+            ], 422);
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $model = $this->model::findOrFail($id);
+            $validated = $request->validate($this->update_rules);
+            $model->update($validated);
+            return new $this->resource($model);
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'Resource not found',
+                'id' => $id
+            ], 404);
+        }
+    }
 
    public function show($id)
    {
-       $model = $this->model::findOrFail($id);
-       return new $this->resource($model);
-   }
+        try {
+            $model = $this->model::findOrFail($id);
+            return new $this->resource($model);
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'Resource not found',
+                'id' => $id
+            ], 404);
+        }
+    }
 
-   public function update(Request $request, $id)
-   {
-       $model = $this->model::findOrFail($id);
-       $validated = $request->validate($this->update_rules);
-       $model->update($validated);
-       return new $this->resource($model);
-   }
-
-   public function destroy($id)
-   {
-       $this->model::findOrFail($id)->delete();
-       return response()->noContent();
-   }
+    public function destroy($id)
+    {
+        try {
+            $model = $this->model::findOrFail($id);
+            $model->delete();
+            return response()->noContent();
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'Resource not found',
+                'id' => $id
+            ], 404);
+        }
+    }
 }

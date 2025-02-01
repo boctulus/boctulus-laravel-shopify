@@ -1,6 +1,6 @@
 {
     "info": {
-        "_postman_id": "532dcf91-f065-6b0d-ce08-64ef98c31b20",
+        "_postman_id": "5128ba06-1d25-e193-6275-8c347fed9126",
         "name": "LaravelShopify",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "description": "Collection for LaravelShopify API endpoints",
@@ -13,6 +13,81 @@
                 "method": "GET",
                 "header": [],
                 "description": "Get users",
+                "url": {
+                    "raw": "/api/users",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "users"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "users",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post users",
+                "url": {
+                    "raw": "/api/users",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "users"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "users",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch users",
+                "url": {
+                    "raw": "/api/users",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "users"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "users",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete users",
                 "url": {
                     "raw": "/api/users",
                     "host": [
@@ -58,11 +133,161 @@
             "response": []
         },
         {
+            "name": "carts",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post carts",
+                "url": {
+                    "raw": "/api/carts",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "carts"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "carts",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch carts",
+                "url": {
+                    "raw": "/api/carts",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "carts"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "carts",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete carts",
+                "url": {
+                    "raw": "/api/carts",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "carts"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
             "name": "cart_items",
             "request": {
                 "method": "GET",
                 "header": [],
                 "description": "Get cart_items",
+                "url": {
+                    "raw": "/api/cart_items",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "cart_items"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "cart_items",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post cart_items",
+                "url": {
+                    "raw": "/api/cart_items",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "cart_items"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "cart_items",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch cart_items",
+                "url": {
+                    "raw": "/api/cart_items",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "cart_items"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "cart_items",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete cart_items",
                 "url": {
                     "raw": "/api/cart_items",
                     "host": [
@@ -108,11 +333,161 @@
             "response": []
         },
         {
+            "name": "products",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post products",
+                "url": {
+                    "raw": "/api/products",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "products"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "products",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch products",
+                "url": {
+                    "raw": "/api/products",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "products"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "products",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete products",
+                "url": {
+                    "raw": "/api/products",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "products"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
             "name": "addresses",
             "request": {
                 "method": "GET",
                 "header": [],
                 "description": "Get addresses",
+                "url": {
+                    "raw": "/api/addresses",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "addresses"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "addresses",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post addresses",
+                "url": {
+                    "raw": "/api/addresses",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "addresses"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "addresses",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch addresses",
+                "url": {
+                    "raw": "/api/addresses",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "addresses"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "addresses",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete addresses",
                 "url": {
                     "raw": "/api/addresses",
                     "host": [
@@ -158,11 +533,161 @@
             "response": []
         },
         {
+            "name": "orders",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post orders",
+                "url": {
+                    "raw": "/api/orders",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "orders",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch orders",
+                "url": {
+                    "raw": "/api/orders",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "orders",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete orders",
+                "url": {
+                    "raw": "/api/orders",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
             "name": "order_items",
             "request": {
                 "method": "GET",
                 "header": [],
                 "description": "Get order_items",
+                "url": {
+                    "raw": "/api/order_items",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "order_items"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "order_items",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post order_items",
+                "url": {
+                    "raw": "/api/order_items",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "order_items"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "order_items",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch order_items",
+                "url": {
+                    "raw": "/api/order_items",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "order_items"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "order_items",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete order_items",
                 "url": {
                     "raw": "/api/order_items",
                     "host": [
@@ -208,6 +733,81 @@
             "response": []
         },
         {
+            "name": "favorites",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post favorites",
+                "url": {
+                    "raw": "/api/favorites",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "favorites"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "favorites",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch favorites",
+                "url": {
+                    "raw": "/api/favorites",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "favorites"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "favorites",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete favorites",
+                "url": {
+                    "raw": "/api/favorites",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "favorites"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
             "name": "price_rules",
             "request": {
                 "method": "GET",
@@ -233,11 +833,161 @@
             "response": []
         },
         {
+            "name": "price_rules",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post price_rules",
+                "url": {
+                    "raw": "/api/price_rules",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "price_rules"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "price_rules",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch price_rules",
+                "url": {
+                    "raw": "/api/price_rules",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "price_rules"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "price_rules",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete price_rules",
+                "url": {
+                    "raw": "/api/price_rules",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "price_rules"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
             "name": "inventory",
             "request": {
                 "method": "GET",
                 "header": [],
                 "description": "Get inventory",
+                "url": {
+                    "raw": "/api/inventory",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "inventory"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "inventory",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "description": "Post inventory",
+                "url": {
+                    "raw": "/api/inventory",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "inventory"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "inventory",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "description": "Patch inventory",
+                "url": {
+                    "raw": "/api/inventory",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "inventory"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{token}}"
+                    }
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "inventory",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "description": "Delete inventory",
                 "url": {
                     "raw": "/api/inventory",
                     "host": [

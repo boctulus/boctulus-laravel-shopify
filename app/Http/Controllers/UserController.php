@@ -3,25 +3,45 @@
 namespace App\Http\Controllers;
 
 //uses
-use App\Models\Favorite;
-use App\Http\Resources\FavoriteResource;
+use App\Models\User;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
-class FavoriteController extends Controller
+class UserController extends Controller
 {
    //traits
-   protected $model = Favorite::class;
-   protected $resource = FavoriteResource::class;
+   protected $model = User::class;
+   protected $resource = UserResource::class;
 
    protected $store_rules = [
-		'user_id' => 'integer|required',
-		'shopify_product_id' => 'integer|required',
+		'name' => 'string|max:255|required',
+		'email' => 'string|max:255|unique:users,email|required',
+		'email_verified_at' => 'nullable',
+		'password' => 'string|max:255|required',
+		'remember_token' => 'nullable|string|max:100',
+		'shopify_grandfathered' => 'nullable|boolean',
+		'shopify_namespace' => 'nullable|string|max:255',
+		'shopify_freemium' => 'nullable|boolean',
+		'plan_id' => 'nullable|integer',
+		'deleted_at' => 'nullable',
+		'password_updated_at' => 'nullable|date',
+		'theme_support_level' => 'nullable|integer',
 	];
 
 	protected $update_rules = [
-		'user_id' => 'integer',
-		'shopify_product_id' => 'integer',
+		'name' => 'string|max:255',
+		'email' => 'string|max:255',
+		'email_verified_at' => 'nullable',
+		'password' => 'string|max:255',
+		'remember_token' => 'nullable|string|max:100',
+		'shopify_grandfathered' => 'nullable|boolean',
+		'shopify_namespace' => 'nullable|string|max:255',
+		'shopify_freemium' => 'nullable|boolean',
+		'plan_id' => 'nullable|integer',
+		'deleted_at' => 'nullable',
+		'password_updated_at' => 'nullable|date',
+		'theme_support_level' => 'nullable|integer',
 	];
 
 
