@@ -36,6 +36,11 @@ Route::middleware([
             'price_rules' => PriceRuleController::class,
             'users' => UserController::class,
         ]);
+
+        // Rutas de escritura para Product
+        Route::post('products', [ProductController::class, 'store']);
+        Route::put('products/{id}', [ProductController::class, 'update']);
+        Route::delete('products/{id}', [ProductController::class, 'destroy']);
     });
 
     // Rutas para customers 
@@ -51,8 +56,7 @@ Route::middleware([
             'favorites' => FavoriteController::class,
             'orders' => OrderController::class,
             'order_items' => OrderItemController::class,
-            'addresses' => AddressController::class,
-            'inventory' => InventoryController::class
+            'addresses' => AddressController::class
         ]);
     });
 });

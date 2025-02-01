@@ -33,12 +33,7 @@ class Product extends Model
 
 	protected $fillable = [
 		'shopify_product_id'
-	];
-
-	public function inventories()
-	{
-		return $this->hasMany(Inventory::class);
-	}
+	];	
 
 	public function price_rules()
 	{
