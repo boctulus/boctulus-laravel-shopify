@@ -19,3 +19,4 @@
 [2025-02-01 17:14:45]	1.0.25	Automatic update
 [2025-02-01 21:45:38]	1.0.26	Authentication OK y Authorization casi
 [2025-02-01 22:10:35]	1.0.27	Automatic update
+[2025-02-01 22:13:06]	1.0.28	Automatic update
