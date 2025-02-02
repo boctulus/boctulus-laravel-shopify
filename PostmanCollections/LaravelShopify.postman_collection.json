@@ -2,13 +2,92 @@
     "info": {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "_postman_id": "e03619ad-cb39-f193-59a1-785ef94316bc",
+        "_postman_id": "81d0e7af-38f0-ce12-a3b7-e78dc029b15f",
         "name": "LaravelShopify",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "description": "Collection for LaravelShopify API endpoints",
         "_exporter_id": "2650147"
     },
     "item": [
+        {
+            "name": "auth",
+            "item": [
+                {
+                    "name": "POST register",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "/api/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "register"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"John Doe 2\",\n    \"email\": \"john@example2.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": {
+                                "token": "{{token}}"
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "/api/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "login"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"john@example2.com\",\n    \"password\": \"password123\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": {
+                                "token": "{{token}}"
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
         {
             "name": "users",
             "item": [
@@ -17,7 +96,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get users",
                         "url": {
                             "raw": "/api/users",
                             "host": [
@@ -42,7 +120,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post users",
                         "url": {
                             "raw": "/api/users",
                             "host": [
@@ -67,7 +144,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch users",
                         "url": {
                             "raw": "/api/users",
                             "host": [
@@ -92,7 +168,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete users",
                         "url": {
                             "raw": "/api/users",
                             "host": [
@@ -122,7 +197,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get carts",
                         "url": {
                             "raw": "/api/carts",
                             "host": [
@@ -147,7 +221,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post carts",
                         "url": {
                             "raw": "/api/carts",
                             "host": [
@@ -172,7 +245,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch carts",
                         "url": {
                             "raw": "/api/carts",
                             "host": [
@@ -197,7 +269,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete carts",
                         "url": {
                             "raw": "/api/carts",
                             "host": [
@@ -227,7 +298,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get cart_items",
                         "url": {
                             "raw": "/api/cart_items",
                             "host": [
@@ -252,7 +322,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post cart_items",
                         "url": {
                             "raw": "/api/cart_items",
                             "host": [
@@ -277,7 +346,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch cart_items",
                         "url": {
                             "raw": "/api/cart_items",
                             "host": [
@@ -302,7 +370,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete cart_items",
                         "url": {
                             "raw": "/api/cart_items",
                             "host": [
@@ -332,7 +399,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get products",
                         "url": {
                             "raw": "/api/products",
                             "host": [
@@ -357,7 +423,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post products",
                         "url": {
                             "raw": "/api/products",
                             "host": [
@@ -382,7 +447,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch products",
                         "url": {
                             "raw": "/api/products",
                             "host": [
@@ -407,7 +471,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete products",
                         "url": {
                             "raw": "/api/products",
                             "host": [
@@ -437,7 +500,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get addresses",
                         "url": {
                             "raw": "/api/addresses",
                             "host": [
@@ -462,7 +524,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post addresses",
                         "url": {
                             "raw": "/api/addresses",
                             "host": [
@@ -487,7 +548,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch addresses",
                         "url": {
                             "raw": "/api/addresses",
                             "host": [
@@ -512,7 +572,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete addresses",
                         "url": {
                             "raw": "/api/addresses",
                             "host": [
@@ -542,7 +601,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get orders",
                         "url": {
                             "raw": "/api/orders",
                             "host": [
@@ -567,7 +625,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post orders",
                         "url": {
                             "raw": "/api/orders",
                             "host": [
@@ -592,7 +649,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch orders",
                         "url": {
                             "raw": "/api/orders",
                             "host": [
@@ -617,7 +673,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete orders",
                         "url": {
                             "raw": "/api/orders",
                             "host": [
@@ -647,7 +702,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get order_items",
                         "url": {
                             "raw": "/api/order_items",
                             "host": [
@@ -672,7 +726,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post order_items",
                         "url": {
                             "raw": "/api/order_items",
                             "host": [
@@ -697,7 +750,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch order_items",
                         "url": {
                             "raw": "/api/order_items",
                             "host": [
@@ -722,7 +774,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete order_items",
                         "url": {
                             "raw": "/api/order_items",
                             "host": [
@@ -752,7 +803,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get favorites",
                         "url": {
                             "raw": "/api/favorites",
                             "host": [
@@ -777,7 +827,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post favorites",
                         "url": {
                             "raw": "/api/favorites",
                             "host": [
@@ -802,7 +851,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch favorites",
                         "url": {
                             "raw": "/api/favorites",
                             "host": [
@@ -827,7 +875,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete favorites",
                         "url": {
                             "raw": "/api/favorites",
                             "host": [
@@ -857,7 +904,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get price_rules",
                         "url": {
                             "raw": "/api/price_rules",
                             "host": [
@@ -882,7 +928,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post price_rules",
                         "url": {
                             "raw": "/api/price_rules",
                             "host": [
@@ -907,7 +952,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch price_rules",
                         "url": {
                             "raw": "/api/price_rules",
                             "host": [
@@ -932,7 +976,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete price_rules",
                         "url": {
                             "raw": "/api/price_rules",
                             "host": [
@@ -962,7 +1005,6 @@
                     "request": {
                         "method": "GET",
                         "header": [],
-                        "description": "Get inventory",
                         "url": {
                             "raw": "/api/inventory",
                             "host": [
@@ -987,7 +1029,6 @@
                     "request": {
                         "method": "POST",
                         "header": [],
-                        "description": "Post inventory",
                         "url": {
                             "raw": "/api/inventory",
                             "host": [
@@ -1012,7 +1053,6 @@
                     "request": {
                         "method": "PATCH",
                         "header": [],
-                        "description": "Patch inventory",
                         "url": {
                             "raw": "/api/inventory",
                             "host": [
@@ -1037,7 +1077,6 @@
                     "request": {
                         "method": "DELETE",
                         "header": [],
-                        "description": "Delete inventory",
                         "url": {
                             "raw": "/api/inventory",
                             "host": [
@@ -1047,54 +1086,6 @@
                                 "api",
                                 "inventory"
                             ]
-                        },
-                        "auth": {
-                            "type": "bearer",
-                            "bearer": {
-                                "token": "{{token}}"
-                            }
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        },
-        {
-            "name": "register",
-            "item": [
-                {
-                    "name": "POST register",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json"
-                            }
-                        ],
-                        "description": "Post register",
-                        "url": {
-                            "raw": "/api/register",
-                            "host": [
-                                "{{base_url}}"
-                            ],
-                            "path": [
-                                "api",
-                                "register"
-                            ]
-                        },
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"name\": \"John Doe 2\",\n    \"email\": \"john@example2.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}",
-                            "options": {
-                                "raw": {
-                                    "language": "json"
-                                }
-                            }
                         },
                         "auth": {
                             "type": "bearer",
